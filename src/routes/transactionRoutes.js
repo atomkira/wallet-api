@@ -5,16 +5,15 @@ import { createTransaction, getTransactionsByUserId,deleteTransaction,getTransac
 
 const router = express.Router();
 
+// Define more specific routes BEFORE parameter catch-alls
+router.get('/summary/:userId', getTransactionSummary);
 
-router.get('/:userId',getTransactionsByUserId )
+router.get('/:userId', getTransactionsByUserId);
 
 router.post('/', createTransaction) 
 
    
 
 router.delete('/:id', deleteTransaction)
-
-
-router.get('/summary/:userId',getTransactionSummary) 
 
 export default router;
